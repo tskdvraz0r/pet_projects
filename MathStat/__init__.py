@@ -56,3 +56,15 @@ class Math:
 
 class Statistic:
     pass
+
+
+class Time:
+    def minutes_to_hhmm(minutes: int):
+        """
+        :param minutes: sum of minutes
+        :return: datetime.time(hour = minutes // 60, minute = minutes % 60)
+        """
+
+        from datetime import time
+
+        return time(hour=minutes // 60, minute=minutes % 60)
