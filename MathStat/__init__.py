@@ -18,6 +18,26 @@ class Math:
 
             return 6 * rib_length ** 2
 
+    @staticmethod
+    def sum_of_squares(a: float, b: float) -> float:
+        """
+        :param a: 1st number
+        :param b: 2nd number
+        :return: f(x) = a ** 2 + b ** 2
+        """
+
+        return a ** 2 + b ** 2
+
+    @staticmethod
+    def square_of_sums(a: float, b: float) -> float:
+        """
+        :param a: 1st number
+        :param b: 2nd number
+        :return: f(x) = (a + b) ** 2
+        """
+
+        return (a + b) ** 2
+
     class Progression:
         @staticmethod
         def arithmetic(a_1: float, diff: float, a_n: float) -> float:
