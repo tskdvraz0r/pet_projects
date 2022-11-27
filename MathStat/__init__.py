@@ -78,6 +78,25 @@ class Math:
 
                 return prog_lst
 
+            @staticmethod
+            def is_progression(num_list: list) -> bool:
+                """
+                :param num_list:
+                :return:
+                """
+
+                first_num: float = num_list[0]
+                diff: float = num_list[1] - num_list[0]
+                list_length = len(num_list) - 1
+                prog_list: list = [first_num]
+
+                while list_length > 0:
+                    prog_list.append(first_num + diff)
+                    first_num = prog_list[-1]
+                    list_length -= 1
+
+                return num_list == prog_list
+
         class Geometric:
             @staticmethod
             def n_num(b_1: float, diff: float, b_n: float) -> float:
@@ -121,6 +140,19 @@ class Math:
 
                 return prog_lst
 
+            @staticmethod
+            def is_progression(num_list: list) -> bool:
+                first_num: float = num_list[0]
+                diff: float = num_list[1] - num_list[0]
+                list_length = len(num_list) - 1
+                prog_list: list = [first_num]
+
+                while list_length > 0:
+                    prog_list.append(first_num * diff)
+                    first_num = prog_list[-1]
+                    list_length -= 1
+
+                return num_list == prog_list
 class Statistic:
     pass
 
