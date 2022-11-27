@@ -228,3 +228,20 @@ class Sorting:
             max_num = i if max_num < i else max_num
 
         return [min_num, max_num]
+
+    @staticmethod
+    def insertion_sort(num_list: list) -> list:
+        """
+        :param num_list:
+        :return:
+        """
+        itr: int = len(num_list) // 2
+
+        while itr > 0:
+            for i in range(len(num_list) - 1):
+                if num_list[i] > num_list[i + 1]:
+                    num_list[i], num_list[i + 1] = num_list[i + 1], num_list[i]
+
+            itr -= 1
+
+        return num_list
