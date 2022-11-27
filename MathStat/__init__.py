@@ -166,6 +166,8 @@ class Math:
                     list_length -= 1
 
                 return num_list == prog_list
+
+
 class Statistic:
     pass
 
@@ -180,3 +182,49 @@ class Time:
         from datetime import time
 
         return time(hour=minutes // 60, minute=minutes % 60)
+
+
+class Sorting:
+    @staticmethod
+    def minimum(num_list: list) -> float:
+        """
+        :param num_list:
+        :return:
+        """
+
+        min_num = num_list[0]
+
+        for i in num_list:
+            min_num = i if min_num > i else min_num
+
+        return min_num
+
+    @staticmethod
+    def maximum(num_list: list) -> float:
+        """
+        :param num_list:
+        :return:
+        """
+
+        max_num = num_list[0]
+
+        for i in num_list:
+            max_num = i if max_num < i else max_num
+
+        return max_num
+
+    @staticmethod
+    def minimum_and_maximum(num_list: list) -> list:
+        """
+        :param num_list:
+        :return:
+        """
+
+        min_num = num_list[0]
+        max_num = num_list[0]
+
+        for i in num_list:
+            min_num = i if min_num > i else min_num
+            max_num = i if max_num < i else max_num
+
+        return [min_num, max_num]
