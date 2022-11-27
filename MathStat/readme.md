@@ -33,16 +33,13 @@ This library is filled with functions created as a result of solving tasks on th
 -----
 
 ## Statistic:
------
 pass
 
 ## Time:
------
 * minutes_to_hhmm
 -----
 
 ## Sorting:
------
 * minimum
 * maximum
 * minimum_and_maximum
