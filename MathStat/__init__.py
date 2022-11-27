@@ -1,34 +1,35 @@
 class Math:
-    class Cube:
-        @staticmethod
-        def volume(rib_length: float) -> float:
-            """
-            :param rib_length: cube rib length
-            :return: f(x) = rib_length ** 3  # cube volume
-            """
+    class Figure:
+        class Cube:
+            @staticmethod
+            def volume(rib_length: float) -> float:
+                """
+                :param rib_length: cube rib length
+                :return: f(x) = rib_length ** 3  # cube volume
+                """
 
-            return rib_length ** 3
+                return rib_length ** 3
 
-        @staticmethod
-        def square(rib_length: float) -> float:
-            """
-            :param rib_length: cube rib length
-            :return: f(x) = 6 * rib_length ** 2  # cube square
-            """
+            @staticmethod
+            def square(rib_length: float) -> float:
+                """
+                :param rib_length: cube rib length
+                :return: f(x) = 6 * rib_length ** 2  # cube square
+                """
 
-            return 6 * rib_length ** 2
+                return 6 * rib_length ** 2
 
-    class Triangle:
-        @staticmethod
-        def square(a: float, b: float) -> float:
-            """
+        class Triangle:
+            @staticmethod
+            def square(a: float, b: float) -> float:
+                """
 
-            :param a: 1st cathetus
-            :param b: 2nd cathetus
-            :return: S = 1/2 * a * b
-            """
+                :param a: 1st cathetus
+                :param b: 2nd cathetus
+                :return: S = 1/2 * a * b
+                """
 
-            return 1 / 2 * a * b
+                return 1 / 2 * a * b
 
     @staticmethod
     def sum_of_squares(a: float, b: float) -> float:
