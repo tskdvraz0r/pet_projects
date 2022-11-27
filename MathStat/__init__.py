@@ -18,6 +18,18 @@ class Math:
 
             return 6 * rib_length ** 2
 
+    class Triangle:
+        @staticmethod
+        def square(a: float, b: float) -> float:
+            """
+
+            :param a: 1st cathetus
+            :param b: 2nd cathetus
+            :return: S = 1/2 * a * b
+            """
+
+            return 1 / 2 * a * b
+
     @staticmethod
     def sum_of_squares(a: float, b: float) -> float:
         """
@@ -86,7 +98,7 @@ class Math:
                 """
 
                 first_num: float = num_list[0]
-                diff: float = num_list[-2] - num_list[-1]
+                diff: float = num_list[-1] - num_list[-2]
                 list_length = len(num_list) - 1
                 prog_list: list = [first_num]
 
@@ -143,7 +155,7 @@ class Math:
             @staticmethod
             def is_progression(num_list: list) -> bool:
                 first_num: float = num_list[0]
-                diff: float = num_list[-2] - num_list[-1]
+                diff: float = num_list[-1] - num_list[-2]
                 list_length = len(num_list) - 1
                 prog_list: list = [first_num]
 
