@@ -86,7 +86,7 @@ class Math:
                 """
 
                 first_num: float = num_list[0]
-                diff: float = num_list[1] - num_list[0]
+                diff: float = num_list[-2] - num_list[-1]
                 list_length = len(num_list) - 1
                 prog_list: list = [first_num]
 
@@ -143,7 +143,7 @@ class Math:
             @staticmethod
             def is_progression(num_list: list) -> bool:
                 first_num: float = num_list[0]
-                diff: float = num_list[1] - num_list[0]
+                diff: float = num_list[-2] - num_list[-1]
                 list_length = len(num_list) - 1
                 prog_list: list = [first_num]
 
