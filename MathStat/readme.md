@@ -1,5 +1,5 @@
 # About:
-This library is filled with functions created as a result of solving problems on the various courses.
+This library is filled with functions created as a result of solving tasks on the various courses.
 
 # Structure:
 ## Math
