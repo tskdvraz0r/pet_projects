@@ -11,6 +11,21 @@ from modules.classes.character.race import Race
 
 
 class Characteristic:
+    """
+    Notes:
+        Класс описывает характеристики персонажа;
+    
+    Properties:
+        * strength - расовый бонус силы;
+        * dexterity - расовый бонус ловкости;
+        * endurance - расовый бонус выносливости;
+        * inteligence - расовый бонус интеллекта;
+        * wisdom - расовый бонус мудрости;
+        * charisma - расовый бонус харизмы;
+    
+    Methods:
+        * gen_characteristic_value() - Метод генерирует значение характеристики по правилу: бросается 4d6, вычитается наименьшее, остальные суммируются;
+    """
     
     # =========================
     # АТРИБУТЫ
@@ -76,6 +91,7 @@ class Characteristic:
         Returns:
             int: Значение характеристики ловкости.
         """
+        
         return self._dexterity
     
     @property
@@ -87,6 +103,7 @@ class Characteristic:
         Returns:
             int: Значение характеристики выносливости.
         """
+        
         return self._endurance
     
     @property
@@ -98,6 +115,7 @@ class Characteristic:
         Returns:
             int: Значение характеристики интеллекта.
         """
+        
         return self._inteligence
     
     @property
@@ -109,6 +127,7 @@ class Characteristic:
         Returns:
             int: Значение характеристики мудрости.
         """
+        
         return self._wisdom
     
     @property
@@ -120,6 +139,7 @@ class Characteristic:
         Returns:
             int: Значение характеристики харизмы.
         """
+        
         return self._charisma
 
     # =========================
@@ -128,8 +148,7 @@ class Characteristic:
     def gen_characteristic_value(self) -> int:
         """
         Notes:
-            Функция генерирует значение характеристики, основываясь на правилах редакции 5.1:
-            Бросается 4d6, вычитается наименьшее, остальные суммируются.
+            Метод генерирует значение характеристики по правилу: бросается 4d6, вычитается наименьшее, остальные суммируются;
 
         Returns:
             int: Значение характеристики;

@@ -10,26 +10,27 @@ from modules.data_validation.check import Check
 
 class Dice:
     """
-    Класс описывает игровой кубик и взаимодействие с ним;
+    Notes:
+        Класс описывает игровой кубик и взаимодействие с ним;
     
     Attributes:
-        _available_of_dices (set[int]): множество доступных кубиков;
+        * available_dices (set[int]): множество доступных кубиков;
     
     Methods:
-        roll() - Метод реализует симуляцию броска кубика посредством генерации псевдослучайного числа, находящегося в диапазоне граней кубика;
+        * roll() - Метод реализует симуляцию броска кубика посредством генерации псевдослучайного числа, находящегося в диапазоне граней кубика;
     """
     
     # =========================
     # АТРИБУТЫ
     # =========================
-    _available_of_dices: set[int] = {2, 4, 6, 8, 10, 12, 20, 100, 1000}
+    _available_dices: set[int] = {2, 4, 6, 8, 10, 12, 20, 100, 1000}
 
     # =========================
     # ИНИЦИАЛИЗАЦИЯ
     # =========================
     def __init__(self, d: int) -> None:
         Check.value_type(value=d, expected_type=int)
-        Check.value_is_available(value=d, available=self.available_of_dices)
+        Check.value_is_available(value=d, available=self.available_dices)
         
         self._d: int = d
 
@@ -37,7 +38,7 @@ class Dice:
     # СВОЙСТВА
     # =========================
     @property
-    def available_of_dices(self) -> set[int]:
+    def available_dices(self) -> set[int]:
         """
         Notes:
             Метод возвращает множество доступных значений граней кубика. 
@@ -45,7 +46,7 @@ class Dice:
         Returns:
             set[int]: Множество доступных граней кубика.
         """
-        return self._available_of_dices
+        return self._available_dices
     
     @property
     def d(self) -> int:
@@ -81,3 +82,4 @@ class Dice:
         
         else:
             return rd.randrange(start=0, stop=1000, step=10) + rd.randrange(start=0, stop=100, step=10) + rd.randint(a=0, b=9)
+        
