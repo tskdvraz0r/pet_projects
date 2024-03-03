@@ -4,7 +4,7 @@ import sys
 # Сторонние библиотеки
 
 # Проектные библиотеки
-sys.path.insert(0, "/Users/dmitrijkolganov/Yandex.Disk.localized/git/pet_projects/console_rpg/modules")
+sys.path.insert(0, "/Users/dmitrijkolganov/Yandex.Disk.localized/git/pet_projects/rpg_game/modules")
 from modules.data_validation.check import Check
 from modules.mechanics.dice import Dice
 from modules.classes.character.race import Race
@@ -40,7 +40,7 @@ class Characteristic:
             class_race: Race
     ) -> None:
         Check.value_type(value=class_race, expected_type=Race)
-        Check.value_is_available(value=class_race, available=Race.available_races)
+        Check.value_is_available(value=class_race.name, available=class_race.available_races)
         
         self._strength: int = (
             self.gen_characteristic_value()
