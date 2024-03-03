@@ -64,6 +64,17 @@ class Race:
         return self._available_races
     
     @property
+    def name(self) -> str:
+        """
+        Notes:
+            Метод возвращает наименование расы.
+
+        Returns:
+            set[str]: Наименование расы.
+        """
+        return self._name
+    
+    @property
     def strength(self) -> int:
         """
         Notes:
