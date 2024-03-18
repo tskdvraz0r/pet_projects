@@ -1,118 +1,216 @@
+# ==================================================
+# IMPORTS
+# ==================================================
 import os
 
+
+# ==================================================
+# CLASS
+# ==================================================
 class Docker:
     
     @classmethod
-    def v(cls) -> None:
-        """
-        Notes:
-            Метод вызывает Bash-команду "docker -v", которая возвращает версию установленного docker;
-        """
-        
-        os.system(command="docker -v")
-    
-    
-    @classmethod
-    def images(cls) -> None:
-        """
-        Notes:
-            Метод вызывает Bash-команду "docker images", которая выводит список docker-образов на хосте;
-        """
-        
-        os.system(command="docker images")
-    
-    
-    @classmethod
-    def ps(cls, options: str = "") -> None:
-        """
-        Notes:
-            Метод вызывает Bash-команду "docker ps", которая выводит информацию об активных docker-контейнерах на хосте.
-            При использовании необязательного атрибута "all", будет показана информация о всех docker-контейнерах на хосте.
-
-        Args:
-            all (bool, optional): Необязательный аргумент, отвечающий за вывод ВСЕХ docker-контейнеров на хосте.
-        """
-        
-        if options:
-            os.system(command=f"docker ps {options}")
-        else:
-            os.system(command="docker ps")
-    
-    
-    @classmethod
-    def pull(cls, image: str) -> None:
-        """
-        Notes:
-            Метод вызывает bash-комманду "docker pull <image>:<tag>"
-
-        Args:
-            image (str): Название образа. При необходимости можно указать тег;
-        """
-        
-        os.system(command=f"docker pull {image}")
-    
-    
-    @classmethod
-    def rm(cls, name_or_id: str) -> None:
-        """
-        Notes:
-            Метод вызывает Bash-команду "docker rmi";
-            Удаление Docker-образа;
-
-        Args:
-            name_or_id (str): Имя образа или id;
-        """
-        
-        os.system(command=f"docker rm {name_or_id}")
-    
-    @classmethod
-    def rmi(cls, image_or_id: str) -> None:
-        """
-        Notes:
-            Метод вызывает Bash-команду "docker rmi";
-            Удаление Docker-образа;
-
-        Args:
-            image_or_id (str): Имя образа (с тегом или без) или id.
-        """
-        
-        os.system(command=f"docker rmi {image_or_id}")
-        
-         
-    @classmethod
-    def run(
+    def version(
             cls,
-            image: str,
-            options: str = "",
-            platform: str = "linux/amd64",
+            options: str
     ) -> None:
-        """
-        Notes:
-            Метод вызывает bash-команду "docker run", которая запускает контенейр из образа;
-
-        Args:
-            image (str): Название образа;
-            options (str, optional): Дополнительные опции;
-            platform (str, optional): Платформа. По умолчанию "linux/amd64";
-        """
         
-        if options:
-            os.system(command=f"docker run {options} --platform={platform} {image}")
-        else:
-            os.system(command=f"docker run --platform={platform} {image}")
-
-    @classmethod
-    def stop(cls, name: str) -> None:
-        
-        os.system(command=f"docker stop {name}")
+        os.system(command=f"docker --version {options}".strip())
     
-    @classmethod
-    def start(cls, name: str) -> None:
-        
-        os.system(command=f"docker start {name}")
-
     
-    @classmethod
-    def commit(cls, name: str, new_name: str) -> None:
+    class Container:
         
-        os.system(command=f"docker commit {name} {new_name}")
+        @classmethod
+        def attach(cls) -> None:
+            pass
+        
+        @classmethod
+        def commit(
+                cls,
+                options: str,
+                container: str,
+                repository: str
+        ) -> None:
+            
+            os.system(command=f"docker container commit {options} {container} {repository}".strip())
+        
+        @classmethod
+        def cp(cls) -> None:
+            pass
+        
+        @classmethod
+        def create(cls) -> None:
+            pass
+        
+        @classmethod
+        def diff(cls) -> None:
+            pass
+        
+        @classmethod
+        def _exec(cls) -> None:
+            pass
+        
+        @classmethod
+        def export(cls) -> None:
+            pass
+        
+        @classmethod
+        def inspect(cls) -> None:
+            pass
+        
+        @classmethod
+        def kill(cls) -> None:
+            pass
+        
+        @classmethod
+        def logs(cls) -> None:
+            pass
+        
+        @classmethod
+        def ls(
+                cls,
+                options: str
+        ) -> None:
+            
+            os.system(command=f"docker container list {options}".strip())
+        
+        @classmethod
+        def pause(cls) -> None:
+            pass
+        
+        @classmethod
+        def port(cls) -> None:
+            pass
+        
+        @classmethod
+        def prune(cls) -> None:
+            pass
+        
+        @classmethod
+        def rename(cls) -> None:
+            pass
+        
+        @classmethod
+        def restart(cls) -> None:
+            pass
+        
+        @classmethod
+        def rm(
+                cls,
+                options: str,
+                container: str,
+        ) -> None:
+            
+            os.system(command=f"docker container rm {options} {container}".strip())
+        
+        @classmethod
+        def run(
+                cls,
+                
+                options: str,
+                image: str,
+                command: str,
+                arg: str,
+                platform: str = "linux/amd64"
+        ) -> None:
+            
+            os.system(command=f"docker container run {options} --platform={platform} {image} {command} {arg}".strip())
+        
+        @classmethod
+        def start(
+                cls,
+                options: str,
+                container: str
+        ) -> None:
+            
+            os.system(command=f"docker container start {options} {container}".strip())
+        
+        @classmethod
+        def stats(cls) -> None:
+            pass
+        
+        @classmethod
+        def stop(
+                cls,
+                options: str,
+                container: str
+        ) -> None:
+            
+            os.system(command=f"docker container stop {options} {container}".strip())
+        
+        @classmethod
+        def top(cls) -> None:
+            pass
+        
+        @classmethod
+        def unpause(cls) -> None:
+            pass
+        
+        @classmethod
+        def update(cls) -> None:
+            pass
+        
+        @classmethod
+        def wait(cls) -> None:
+            pass
+        
+    
+    class Image:
+        
+        @classmethod
+        def build(cls) -> None:
+            pass
+        
+        @classmethod
+        def history(cls) -> None:
+            pass
+        
+        @classmethod
+        def _import(cls) -> None:
+            pass
+        
+        @classmethod
+        def inspect(cls) -> None:
+            pass
+        
+        @classmethod
+        def load(cls) -> None:
+            pass
+        
+        @classmethod
+        def ls(
+                cls,
+                options: str,
+                repository: str =""
+        ) -> None:
+            
+            os.system(command=f"docker image ls {options} {repository}".strip())
+
+        @classmethod
+        def prune(cls) -> None:
+            pass
+        
+        @classmethod
+        def pull(
+                cls,
+                options: str,
+                name: str
+        ) -> None:
+            
+            os.system(command=f"docker image pull {options} {name}".strip())
+        
+        @classmethod
+        def push(cls) -> None:
+            pass
+        
+        @classmethod
+        def rm(cls) -> None:
+            pass
+        
+        @classmethod
+        def save(cls) -> None:
+            pass
+        
+        @classmethod
+        def tag(cls) -> None:
+            pass
